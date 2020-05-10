@@ -43,6 +43,11 @@ app.post("/api/logout",(req,res)=>{
     }
 });
 
-app.listen(3500,function(){
-    console.log("server started on part 3500.........");
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 3500;
+}
+
+app.listen(port,function(){
+    console.log("server started on port "+port+".........");
 });
