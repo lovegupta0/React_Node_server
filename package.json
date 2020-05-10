@@ -1,0 +1,19 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LG1000",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cookies": "^0.8.0",
+    "express": "^4.17.1",
+    "md5": "^2.2.1",
+    "moongoose": "0.0.5",
+    "mysql": "^2.18.1"
+  }
+}
