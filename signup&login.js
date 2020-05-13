@@ -1,6 +1,6 @@
 const md5=require("md5");
 const sql=require("mysql");
-var conn=sql.createConnection({
+const conn=sql.createConnection({
     host: "sql12.freemysqlhosting.net",
     user: "sql12339010",
     password: "1eKFIYBhDy",
@@ -95,17 +95,32 @@ exports.login=async (body,res,cookies)=>{
                         cookies.set("streaming_service",body.username,{expires:date, signed: true });
                     }
 
+                    
+
                     if(body.username==="admin@admin.com"){
-                        res.send("admin");
+                        var obj={
+                         status:"admin",
+                         userId:body.username,
+                         name:result[0].fname
+                        }
+                        res.send(JSON.stringify(obj));
                     }
                     else{
-                        res.send("sucess");
+                        var obj={
+                            status:"sucess",
+                            userId:body.username,
+                            name:result[0].fname
+                           }
+                        res.send(JSON.stringify(obj));
                     }
                     
                 }
 
                 else{
-                    res.send("Not sucess");
+                    var obj={
+                        status:"Not sucess"
+                       }
+                    res.send(JSON.stringify(obj));
                 }
             }
         }
