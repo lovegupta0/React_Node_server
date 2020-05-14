@@ -75,7 +75,7 @@ app.get("/api/getData",(req,res)=>{
 
 app.post("/api/upload",upload.single("img"),(req,res)=>{
     if(req.file){
-        img="https://ancient-shore-70337.herokuapp.com"+req.file.path.split("public")[1];
+        img=req.file.path.split("public")[1];
         console.log(img);
         
     res.status(200).send();
