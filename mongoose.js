@@ -14,7 +14,7 @@ conn.connect(function(err){
     if(err) throw err;
 });
 
-mongoose.connect("mongodb+srv://lovegupta0:lovegupta@sservice-f1okn.mongodb.net/Streaming_service",{
+mongoose.connect(process.env.MONGODB_URI ||"mongodb+srv://lovegupta0:lovegupta@sservice-f1okn.mongodb.net/Streaming_service",{
   useNewUrlParser:true,
   useUnifiedTopology: true
 });
