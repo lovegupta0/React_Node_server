@@ -1,8 +1,11 @@
 const express=require("express");
 const bodyParser=require("body-parser");
+const mongoo=require("mongoose");
+const sql=require("mysql");
+const md5=require("md5");
 const signup_login=require("./signup&login");
 const Cookies=require("cookies");
-const mongoose=require("./mongoose");
+const mongoose=require(__dirname+"/mongoose.js");
 const app=express();
 const multer=require("multer");
 const path=require("path");
@@ -27,6 +30,10 @@ var storage=multer.diskStorage({
 const keys=["hello world"];
 var username="";
 var img="";
+
+app.get("/",(req,res)=>{
+    res.send("working...");
+})
 
 app.route("/login")
     .get(function(req,res){
