@@ -1,12 +1,13 @@
-const mongoose=require("mongoose");
+var mongoose;
+var media;
 const sql=require("mysql");
 var allData=[];
 var caroData=[];
-const conn=sql.createConnection({
-  host: "sql12.freemysqlhosting.net",
-  user: "sql12339010",
-  password: "1eKFIYBhDy",
-  database: "sql12339010",
+var conn=sql.createConnection({
+  host: "localhost",
+  user: "root",
+  password: "6144",
+  database: "Streaming_service",
   insecureAuth : true
 });
 
@@ -14,18 +15,11 @@ conn.connect(function(err){
     if(err) throw err;
 });
 
-mongoose.connect("mongodb+srv://lovegupta0:lovegupta@sservice-f1okn.mongodb.net/Streaming_service",{
-  useNewUrlParser:true,
-  useUnifiedTopology: true
-});
-
-const media=new mongoose.Schema({
-    filename:String,
-    img:String,
-    media_url:String,
-    premium_contain:String
-  
-});
+exports.set=(mongo,medi)=>{
+  mongoose=mongo;
+  media=medi;
+  extract();
+}
 
 function uploadData(body,img,val){
   
@@ -138,7 +132,7 @@ async function extract(){
 }
 
 
-extract();
+
 
 function alldatas(body,img){
   

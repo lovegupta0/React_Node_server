@@ -1,10 +1,11 @@
+
 const md5=require("md5");
 const sql=require("mysql");
-const conn=sql.createConnection({
-    host: "sql12.freemysqlhosting.net",
-    user: "sql12339010",
-    password: "1eKFIYBhDy",
-    database: "sql12339010",
+var conn=sql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: "6144",
+    database: "Streaming_service",
     insecureAuth : true
 });
 
